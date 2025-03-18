@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+h1{
+  font-family: "Anton", sans-serif;
+}
+
+*{
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading="lazy"] {
+    clip-path: inset(0.6px);
+  }
+}
