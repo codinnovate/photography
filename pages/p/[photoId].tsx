@@ -9,10 +9,12 @@ import type { ImageProps } from "../../utils/types";
 
 const Home: NextPage = ({ currentPhoto }: { currentPhoto: ImageProps }) => {
   const router = useRouter();
-  const { photoId } = router.query;
+  const { photoId, data } = router.query;
+  console.log(data, photoId, 'sds');
   let index = Number(photoId);
 
-  const currentPhotoUrl = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_2560/${currentPhoto.public_id}.${currentPhoto.format}`;
+  
+  const currentPhotoUrl = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/c_scale,w_2560/${currentPhoto?.public_id}.${currentPhoto?.format}`;
 
   return (
     <>
@@ -71,8 +73,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 
 export async function getStaticPaths() {
+  // console.log(data, 'data')
+
   const results = await cloudinary.v2.search
-    .expression(`folder:${process.env.CLOUDINARY_FOLDER}/*`)
+    .expression(`folder:${process.env.NEXT_PUBLIC_CLOUDINARY_FOLDER}/*`)
     .sort_by("public_id", "desc")
     .max_results(400)
     .execute();
