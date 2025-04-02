@@ -82,8 +82,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black z-50">
         
         <div className="relative">
-         <div 
-          className="absolute top-0 p-5 w-full flex items-center justify-between  rounded-full">
+      <div 
+          className="absolute z-50 top-0 p-5 w-full flex items-center justify-between  rounded-full">
         <button
         onClick={() => setSelectedImage(null)}
         className="rounded-full  bg-black/50 p-2 text-white/75 backdrop-blur-lg transition hover:bg-black/75 hover:text-white"
