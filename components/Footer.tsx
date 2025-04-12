@@ -1,7 +1,7 @@
 export default function Footer(){
     return (
         <footer>
-            <p>�� 2021 My Website. All rights reserved.</p>
+            <p className="text-blue text-center">Olalifestyle Website 2025. All rights reserved.</p>
         </footer>
     )
 }
