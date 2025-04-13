@@ -11,7 +11,6 @@ import type { ImageProps } from "../utils/types";
 import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-import ContactForm from "../components/ContactForm";
 
 const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   const router = useRouter();
@@ -78,7 +77,6 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
           ))}
         </div>
       </main>
-      <ContactForm />
       <Footer />
     </>
   );

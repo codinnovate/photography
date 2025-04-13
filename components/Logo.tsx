@@ -34,6 +34,10 @@ export const navItems = [
     {
         label: 'Studio Shoot',
         href: '/studio-work',
+    },
+    {
+        label: 'Contact Me',
+        href: '/contact',
     }
 ]
 
