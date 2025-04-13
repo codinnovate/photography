@@ -29,7 +29,7 @@ export default function ContactForm() {
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6  shadow-xl rounded-lg">
-      <h2 className="text-2xl font-bold text-white mb-4 text-center">Contact Me</h2>
+      <h2 className="text-2xl font-bold text-white mb-4 text-center">Say Hello to Olalifestyle !!</h2>
       <form 
       // onSubmit={handleSubmit}
       className="space-y-4">
