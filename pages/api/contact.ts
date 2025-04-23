@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const mailOptions = {
     from: email,
     to: process.env.CONTACT_EMAIL,
-    subject: `New Contact Message from ${name}`,
+    subject: `New Message from OlalifestylePhotography.com by ${name}`,
     text: `
       Name: ${name}
       Email: ${email}
