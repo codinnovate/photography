@@ -10,22 +10,22 @@ export default function ContactForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setStatus('Sending...');
-  //   const res = await fetch('/api/contact', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify(form),
-  //   });
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('Sending...');
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
+    });
 
-  //   if (res.ok) {
-  //     setStatus('Message sent!');
-  //     setForm({ name: '', email: '', message: '' });
-  //   } else {
-  //     setStatus('Failed to send. Please try again.');
-  //   }
-  // };
+    if (res.ok) {
+      setStatus('Message sent!');
+      setForm({ name: '', email: '', message: '' });
+    } else {
+      setStatus('Failed to send. Please try again.');
+    }
+  };
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6  shadow-xl rounded-lg">
@@ -62,6 +62,7 @@ export default function ContactForm() {
         />
         <button
           type="submit"
+          onClick={handleSubmit}
           className="w-full bg-yellow rounded-2xl text-white p-3  hover:bg-blue transition"
         >
           Send Message
